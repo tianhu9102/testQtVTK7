@@ -11,12 +11,21 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = testQtVTK7
 TEMPLATE = app
 
-SOURCES += main.cpp\
-        widget.cpp \
-        TestVTK.cpp
+INCLUDEPATH += cn.thu.bean \
+                cn.thu.ihm \
+                cn.thu.lib\
+                cn.thu.math\
+                cn.thu.test
 
-HEADERS  += widget.h \
-         TestVTK.h
+
+SOURCES += \
+    main.cpp \
+    cn.thu.test/TestVTK.cpp \
+    cn.thu.ihm/widget.cpp
+
+HEADERS += \
+    cn.thu.test/TestVTK.h \
+    cn.thu.ihm/widget.h
 
 
 INCLUDEPATH += "C:\Program Files\VTK\include\vtk-7.1"
@@ -137,4 +146,6 @@ win32:LIBS += $$quote(C:\Program Files\VTK\lib\vtkViewsCore-7.1.lib)
 win32:LIBS += $$quote(C:\Program Files\VTK\lib\vtkViewsInfovis-7.1.lib)
 win32:LIBS += $$quote(C:\Program Files\VTK\lib\vtkViewsQt-7.1.lib)
 win32:LIBS += $$quote(C:\Program Files\VTK\lib\vtkzlib-7.1.lib)
+
+
 
